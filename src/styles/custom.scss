@@ -1,9 +1,32 @@
+@import "./variables.scss";
 @import "bootstrap/scss/bootstrap";
 
 body{
     font-family: "Inter", system-ui, sans-serif;
     background-color: #f9fafb;
     color: #1f2937;
+}
+
+body[data-theme="dark"] {
+    background-color: #111827;
+    color: #f9fafb;
+
+    .navbar, footer{
+        background-color: #1f2937;
+    }
+
+    a{
+        color: #3B82F6;
+    }
+}
+
+body[data-theme="light"] {
+    background-color: #f9fafb;
+    color: #1f2937;
+
+    .navbar, footer{
+        background-color: #ffffff;
+    }
 }
 
 a{

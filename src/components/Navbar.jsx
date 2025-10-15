@@ -1,12 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Navbar() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
       <div className="container">
         <Link to="/" className="navbar-brand fw-bold text-primary">
           DUC HUY LE
         </Link>
+        <button className="btn btn-outline-secondary ms-auto" onClick={toggleTheme}>
+          {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+        </button>
         <button
           className="navbar-toggler"
           type="button"
