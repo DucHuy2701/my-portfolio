@@ -1,0 +1,16 @@
+@import "bootstrap/scss/bootstrap";
+
+body{
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    padding: 4rem 0;
+}
