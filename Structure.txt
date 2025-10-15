@@ -1,0 +1,27 @@
+my-portfolio/
+├─ public/
+│  └─ resume.pdf
+├─ src/
+│  ├─ assets/               # images, icons
+│  ├─ components/           # small reusable UI components
+│  │  ├─ Navbar.jsx
+│  │  ├─ Footer.jsx
+│  │  └─ ProjectCard.jsx
+│  ├─ sections/             # main page sections
+│  │  ├─ Hero.jsx
+│  │  ├─ About.jsx
+│  │  ├─ Projects.jsx
+│  │  ├─ Experience.jsx
+│  │  ├─ Skills.jsx
+│  │  └─ Contact.jsx
+│  ├─ pages/
+│  │  └─ CV.jsx             # more detailed CV page
+│  ├─ data/
+│  │  └─ projects.json
+│  ├─ hooks/
+│  ├─ styles/
+│  │  └─ custom.scss
+│  ├─ App.jsx
+│  └─ main.jsx
+├─ package.json
+└─ vite.config.js

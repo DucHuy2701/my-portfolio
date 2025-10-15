@@ -1,0 +1,25 @@
+Framework / bundler: React + Vite
+
+Styling / UI: Bootstrap 5 (via npm) + Bootstrap utilities. Optionally add a small custom SCSS file.
+
+Icons: react-icons (FontAwesome / Feather)
+
+Animations: Framer Motion (subtle page/element transitions)
+
+Forms & validation: react-hook-form + yup (contact form)
+
+Routing: react-router-dom
+
+State (if needed): React Context (lightweight)
+
+Data: Local JSON / MDX (projects) or a headless CMS (optional)
+
+Testing: Jest + React Testing Library
+
+Lint + format: ESLint + Prettier
+
+CI / CD: GitHub Actions (auto-deploy)
+
+Deploy: Vercel or Netlify (or GitHub Pages)
+
+Optional extras: EmailJS (contact form without backend), Google Analytics (or Plausible), Lighthouse for audits.
