@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import Button from "../components/Button";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -11,10 +12,13 @@ export default function Navbar() {
         <Link to="/" className="navbar-brand fw-bold text-primary">
           DUC HUY LE
         </Link>
-        <button className="btn btn-outline-secondary ms-auto" onClick={toggleTheme}>
+        <Button
+          className="btn btn-outline-secondary ms-auto"
+          onClick={toggleTheme}
+        >
           {theme === "light" ? "🌙 Dark" : "☀️ Light"}
-        </button>
-        <button
+        </Button>
+        <Button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -24,7 +28,7 @@ export default function Navbar() {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
+        </Button>
 
         <div className="collapse navbar-collapse" id="mainNav">
           <ul className="navbar-nav ms-auto">
