@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Personal Portfolio",
+    "category": "Web",
+    "description": "A responsive portfolio built with React, Bootstrap, and Framer Motion.",
+    "image": "https://picsum.photos/seed/portfolio/600/400",
+    "github": "https://github.com/DucHuy2701/my-portfolio",
+    "demo": "#"
+  },
+  {
+    "id": 2,
+    "title": "E-commerce Admin Dashboard",
+    "category": "Web",
+    "description": "Dashboard with analytics, charts, and authentication using React + Node.js.",
+    "image": "https://picsum.photos/seed/dashboard/600/400",
+    "github": "https://github.com/DucHuy2701",
+    "demo": "#"
+  },
+  {
+    "id": 3,
+    "title": "Mobile UI Kit",
+    "category": "UI Design",
+    "description": "A clean Figma UI kit for mobile apps.",
+    "image": "https://picsum.photos/seed/ui/600/400",
+    "github": "https://github.com/DucHuy2701",
+    "demo": "#"
+  },
+  {
+    "id": 4,
+    "title": "API Microservice",
+    "category": "Backend",
+    "description": "Node.js + Express microservice with REST endpoints and Swagger docs.",
+    "image": "https://picsum.photos/seed/api/600/400",
+    "github": "https://github.com/DucHuy2701",
+    "demo": "#"
+  }
+]
