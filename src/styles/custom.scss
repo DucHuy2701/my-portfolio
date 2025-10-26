@@ -46,3 +46,15 @@ section {
 .badge{
     font-size: 0.75rem;
 }
+
+form input, form textarea{
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    transition: all 0.3s;
+}
+
+form input:focus, form textarea:focus{
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+}

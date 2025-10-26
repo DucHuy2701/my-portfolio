@@ -1,7 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="text-center py-4 border-top mt-5 small text-muted">
-      © {new Date().getFullYear()} DUC HUY LE - Build with React and Bootstrap
+    <footer className="text-center py-4 bg-light mt-5 border-top">
+      <p className="mb-0 text-muted small">
+        © {new Date().getFullYear()} Your Name. All rights reserved.
+      </p>
     </footer>
   );
 }
