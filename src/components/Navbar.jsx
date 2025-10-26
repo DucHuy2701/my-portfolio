@@ -1,56 +1,113 @@
-import { Link, NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link, useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
-import Button from "../components/Button";
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const [active, setActive] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+  const location = useLocation();
+  const {theme, toggleTheme} = useContext(ThemeContext);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      const scrollPos = window.scrollY + 200;
+
+      sections.forEach((sec) => {
+        if (
+          scrollPos >= sec.offsetTop &&
+          scrollPos < sec.offsetTop + sec.offsetHeight
+        ) {
+          setActive(set.id);
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav
+      className={`navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm
+      ${theme === "light" ? "navbar-light bg-white" : "navbar-dark bg-dark"}`}
+    >
       <div className="container">
-        <Link to="/" className="navbar-brand fw-bold text-primary">
-          DUC HUY LE
+        <Link className="navbar-brand fw-bold" to="/">
+          <span className="text-primary">My</span>Portfolio
         </Link>
-        <Button
-          className="btn btn-outline-secondary ms-auto"
-          onClick={toggleTheme}
-        >
+
+        {/* Dark/light */}
+        <button onClick={toggleTheme}
+        className="btn btn-outline-secondary ms-auto me-2">
           {theme === "light" ? "🌙 Dark" : "☀️ Light"}
-        </Button>
-        <Button
+        </button>
+
+        <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          onClick={() => setIsMobile(!isMobile)}
         >
           <span className="navbar-toggler-icon"></span>
-        </Button>
+        </button>
 
-        <div className="collapse navbar-collapse" id="mainNav">
-          <ul className="navbar-nav ms-auto">
+        <div
+          className={`collapse navbar collapse ${isMobile ? "show" : ""}`}
+          id="navbar"
+        >
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            {location.pathname === "/" ? (
+              <>
+                {["home", "about", "skills", "projects", "contact"].map(
+                  (section) => (
+                    <li className="nav-item" key={section}>
+                      <ScrollLink
+                        className={`nav-link ${
+                          active === section ? "active text-primary" : ""
+                        }`}
+                        to={section}
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+                        onClick={() => setIsMobile(false)}
+                      >
+                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                      </ScrollLink>
+                    </li>
+                  )
+                )}
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to="/"
+                    onClick={() => setIsMobile(false)}
+                  >
+                    Home
+                  </Link>
+                </li>
+              </>
+            )}
             <li className="nav-item">
-              <NavLink to="/" className="nav-link">
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/cv" className="nav-link">
-                CV
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/projects" className="nav-link">
+              <Link
+                className="nav-link"
+                to="/projects"
+                onClick={() => setIsMobile(false)}
+              >
                 Projects
-              </NavLink>
+              </Link>
             </li>
             <li className="nav-item">
-              <NavLink to="/contact" className="nav-link">
+              <Link
+                className="nav-link"
+                to="/contact"
+                onClick={() => setIsMobile(false)}
+              >
                 Contact
-              </NavLink>
+              </Link>
             </li>
           </ul>
         </div>
