@@ -9,9 +9,9 @@
   },
   {
     "id": 2,
-    "title": "E-commerce Admin Dashboard",
+    "title": "E-commerce Page",
     "category": "Web",
-    "description": "Dashboard with analytics, charts, and authentication using React + Node.js.",
+    "description": "A basic mini E-commerce web using Java Springboot, Bootstrap and MySQL.",
     "image": "/img/ead.webp",
     "github": "https://github.com/DucHuy2701"
   },
