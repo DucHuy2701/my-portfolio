@@ -5,8 +5,7 @@
     "category": "Web",
     "description": "A responsive portfolio built with React, Bootstrap, and Framer Motion.",
     "image": "/img/pp.webp",
-    "github": "https://github.com/DucHuy2701/my-portfolio",
-    "demo": "#"
+    "github": "https://github.com/DucHuy2701/my-portfolio"
   },
   {
     "id": 2,
@@ -14,8 +13,7 @@
     "category": "Web",
     "description": "Dashboard with analytics, charts, and authentication using React + Node.js.",
     "image": "/img/ead.webp",
-    "github": "https://github.com/DucHuy2701",
-    "demo": "#"
+    "github": "https://github.com/DucHuy2701"
   },
   {
     "id": 3,
@@ -23,8 +21,7 @@
     "category": "UI Design",
     "description": "A clean Figma UI kit for mobile apps.",
     "image": "/img/muk.webp",
-    "github": "https://github.com/DucHuy2701",
-    "demo": "#"
+    "github": "https://github.com/DucHuy2701"
   },
   {
     "id": 4,
@@ -32,7 +29,6 @@
     "category": "Backend",
     "description": "Node.js + Express microservice with REST endpoints and Swagger docs.",
     "image": "/img/am.webp",
-    "github": "https://github.com/DucHuy2701",
-    "demo": "#"
+    "github": "https://github.com/DucHuy2701"
   }
 ]

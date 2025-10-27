@@ -7,7 +7,6 @@ export default function ProjectCard({
   description,
   image,
   github,
-  demo,
   category,
 }) {
   return (
@@ -17,16 +16,20 @@ export default function ProjectCard({
       transition={{ duration: 0.25 }}
       aria-labelledby={`proj-${title}`}
     >
-      <div style={{aspectRatio: "3/2", overflow: "hidden"}}>
+      <div style={{ aspectRatio: "3/2", overflow: "hidden" }}>
         <picture>
-          <source srcSet={image.replace(/(\.jpg|\.png)$/i, ".webp")} type="image/webp"/>
-          <img 
-            src={image} 
+          <source
+            srcSet={image.replace(/(\.jpg|\.png)$/i, ".webp")}
+            type="image/webp"
+          />
+          <img
+            src={image}
             alt={title + " screenshot"}
             className="w-100 h-100"
-            style={{objectFit: "cover", display: "block"}}
+            style={{ objectFit: "cover", display: "block" }}
             loading="lazy"
-            fetchPriority="low" />
+            fetchPriority="low"
+          />
         </picture>
       </div>
 
@@ -35,12 +38,7 @@ export default function ProjectCard({
         <p className="text-muted small flex-grow-1">{description}</p>
         <div className="d-flex justify-content-between mt-3">
           <a href={github} target="_blank" rel="noreferrer">
-            <Button variant="secondary">
-              Github
-            </Button>
-          </a>
-          <a href={demo} target="_blank" rel="noreferrer">
-            <Button variant="secondary">Live Demo</Button>
+            <Button variant="secondary">Github</Button>
           </a>
         </div>
       </div>

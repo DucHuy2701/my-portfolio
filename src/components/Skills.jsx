@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react";
 import Section from "./Section";
 import AnimatedSection from "./AnimatedSection";
 import SkillBadge from "./SkillBadge";
 import skills from "../data/skills.json"
 
 export default function Skills() {
-//   const [skills, setSkills] = useState(null);
-
-//   useEffect(() => {
-//     fetch("/data/skills.json")
-//       .then((res) => res.json())
-//       .then((data) => setSkills(data));
-//   }, []);
 
   return (
     <Section id="skills">
