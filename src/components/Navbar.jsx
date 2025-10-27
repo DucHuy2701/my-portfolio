@@ -19,7 +19,7 @@ export default function Navbar() {
           scrollPos >= sec.offsetTop &&
           scrollPos < sec.offsetTop + sec.offsetHeight
         ) {
-          setActive(set.id);
+          setActive(sec.id);
         }
       });
     };

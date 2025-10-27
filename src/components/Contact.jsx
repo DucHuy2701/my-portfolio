@@ -32,15 +32,15 @@ export default function Contact() {
   return (
     <Section id="contact">
       <AnimatedSection>
-        <h2 className="fw-bold text-center mb-4">Contact me</h2>
+        <motion.h2 className="fw-bold text-center mb-4">Contact me</motion.h2>
 
         <div className="row justify-content-center">
           <div className="cold-md-8 col-lg-6">
             <motion.form
               onSubmit={handleSubmit}
-              initial={{ opacity: 0, y: 30 }}
-              whileHover={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              // initial={{ opacity: 0, y: 30 }}
+              // whileHover={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
               <InputField
