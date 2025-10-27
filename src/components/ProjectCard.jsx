@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
 
@@ -10,12 +11,25 @@ export default function ProjectCard({
   category,
 }) {
   return (
-    <motion.div
+    <motion.article
       className="card h-100 shadow-sm border-0 overflow-hidden"
-      whileHover={{ scale: 1.03 }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ scale: 1.02, boxShadow: "0 12px 24px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.25 }}
+      aria-labelledby={`proj-${title}`}
     >
-      <img src={image} className="card-img-top" alt={title} />
+      <div style={{aspectRatio: "3/2", overflow: "hidden"}}>
+        <picture>
+          <source srcSet={image.replace(/(\.jpg|\.png)$/i, ".webp")} type="image/webp"/>
+          <img 
+            src={image} 
+            alt={title + " screenshot"}
+            className="w-100 h-100"
+            style={{objectFit: "cover", display: "block"}}
+            loading="lazy"
+            fetchPriority="low" />
+        </picture>
+      </div>
+
       <div className="card-body d-flex flex-column">
         <h5 className="fw-bold mb-2">{title}</h5>
         <p className="text-muted small flex-grow-1">{description}</p>
@@ -33,6 +47,6 @@ export default function ProjectCard({
       <span className="position-absolute top-0 start-0 m-2 badge bg-primary">
         {category}
       </span>
-    </motion.div>
+    </motion.article>
   );
 }

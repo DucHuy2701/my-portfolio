@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Section from "./Section";
 import AnimatedSection from "./AnimatedSection";
 import ProjectCard from "./ProjectCard";
@@ -9,9 +9,9 @@ export default function Projects(){
     const category = ["All", ...new Set(projectsData.map(p => p.category))];
     const [active, setActive] = useState("All");
 
-    const filtered = active === "All"
-        ? projectsData
-        : projectsData.filter(p => p.category === active);
+    const filtered = useMemo(() => {
+        return active === "All" ? projectsData : projectsData.filter(p => p.category === active);
+    }, [active]);
 
     return (
         <Section id="projects">

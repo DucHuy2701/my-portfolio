@@ -73,3 +73,24 @@ form input:focus, form textarea:focus{
 .navbar .nav-link.active {
     color: #007bff !important;
 }
+
+.visually-hidden-focusable{
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.visually-hidden-focusable:focus{
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    background: var(--bs-body-bg);
+    padding: 0.5rem 1rem;
+    z-index: 9999;
+    border-radius: 6px;
+    box-shadow: 0 6px 188px rgba(0,0,0,0.12);
+}
